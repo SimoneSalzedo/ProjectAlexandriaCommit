@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/salze/AndroidStudioProjects/ProjectAlexandria/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.10833333333333334" />
+        <entry key="..\:/Users/salze/AndroidStudioProjects/ProjectAlexandria/app/src/main/res/drawable/farologo.xml" value="0.20260416666666667" />
+        <entry key="..\:/Users/salze/AndroidStudioProjects/ProjectAlexandria/app/src/main/res/drawable/heart.xml" value="0.3307291666666667" />
+        <entry key="..\:/Users/salze/AndroidStudioProjects/ProjectAlexandria/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.22916666666666666" />
+        <entry key="..\:/Users/salze/AndroidStudioProjects/ProjectAlexandria/app/src/main/res/drawable/ic_baseline_library_books_24.xml" value="0.22916666666666666" />
+        <entry key="..\:/Users/salze/AndroidStudioProjects/ProjectAlexandria/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/salze/AndroidStudioProjects/ProjectAlexandria/app/src/main/res/drawable/ic_play_lesson_white_24dp.xml" value="0.22916666666666666" />
+        <entry key="..\:/Users/salze/AndroidStudioProjects/ProjectAlexandria/app/src/main/res/layout/activity_favorite.xml" value="0.21302083333333333" />
+        <entry key="..\:/Users/salze/AndroidStudioProjects/ProjectAlexandria/app/src/main/res/layout/activity_home.xml" value="0.33" />
+        <entry key="..\:/Users/salze/AndroidStudioProjects/ProjectAlexandria/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/salze/AndroidStudioProjects/ProjectAlexandria/app/src/main/res/layout/activity_my_audio_books.xml" value="0.20989583333333334" />
+        <entry key="..\:/Users/salze/AndroidStudioProjects/ProjectAlexandria/app/src/main/res/layout/activity_my_books.xml" value="0.20989583333333334" />
+        <entry key="..\:/Users/salze/AndroidStudioProjects/ProjectAlexandria/app/src/main/res/layout/activity_pdfreader.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/salze/AndroidStudioProjects/ProjectAlexandria/app/src/main/res/layout/activity_splash.xml" value="0.3194444444444444" />
+        <entry key="..\:/Users/salze/AndroidStudioProjects/ProjectAlexandria/app/src/main/res/layout/fragment1.xml" value="0.325" />
+        <entry key="..\:/Users/salze/AndroidStudioProjects/ProjectAlexandria/app/src/main/res/layout/fragment2.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/salze/AndroidStudioProjects/ProjectAlexandria/app/src/main/res/layout/fragment3.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/salze/AndroidStudioProjects/ProjectAlexandria/app/src/main/res/layout/fragment_bottom_menu.xml" value="0.21302083333333333" />
+        <entry key="..\:/Users/salze/AndroidStudioProjects/ProjectAlexandria/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.3145833333333333" />
+        <entry key="..\:/Users/salze/AndroidStudioProjects/ProjectAlexandria/app/src/main/res/menu/menu.xml" value="0.23981481481481481" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
