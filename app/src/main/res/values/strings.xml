@@ -3,4 +3,5 @@
     <string name="bookshelves">Bookshelves</string>
     <string name="my_books">My Books</string>
     <string name="my_audio_books">My AudioBooks</string>
+    <string name="ToastMsgStoragePermissionDenied" id="ToastMsgStoragePermissionDenied">Permission is needed for the app to work properly</string>
 </resources>
