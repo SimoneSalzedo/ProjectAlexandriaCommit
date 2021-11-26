@@ -4,8 +4,8 @@
     <item
         android:id="@+id/item1"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_favorite_24"
-        android:title="@string/favorites"/>
+        android:icon="@drawable/ic_baseline_account_balance_24"
+        android:title="@string/bookshelves"/>
 
     <item
         android:id="@+id/item2"
