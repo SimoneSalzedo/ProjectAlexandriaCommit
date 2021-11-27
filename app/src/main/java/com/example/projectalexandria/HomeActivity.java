@@ -80,4 +80,5 @@ public class HomeActivity extends AppCompatActivity {
 
         //END PERMISSION REQUEST
     }
-}
+
+    }
