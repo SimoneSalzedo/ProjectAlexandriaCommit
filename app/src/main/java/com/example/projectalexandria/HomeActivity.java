@@ -13,6 +13,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -79,6 +80,18 @@ public class HomeActivity extends AppCompatActivity {
             }
 
         //END PERMISSION REQUEST
+
+
     }
 
+
+    public void onActivityResult(int requestcode, int resulCode, Intent data) {
+        super.onActivityResult(requestcode,resulCode,data);
+        if (requestcode == requestcode && resulCode == Activity.RESULT_OK) {
+            if (data == null) {
+                return;
+            } Uri uri = data.getData();
+            System.out.println("CIAO");
+            System.out.println(uri.getPath()); }
+    }
     }
