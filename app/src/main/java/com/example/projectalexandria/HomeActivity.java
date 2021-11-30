@@ -17,6 +17,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +26,11 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarMenuView;
 import com.google.android.material.navigation.NavigationBarView;
+
+import java.io.File;
+import java.io.IOException;
+
+import LibraryServices.FileUtil;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -84,14 +90,20 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-
     public void onActivityResult(int requestcode, int resulCode, Intent data) {
         super.onActivityResult(requestcode,resulCode,data);
         if (requestcode == requestcode && resulCode == Activity.RESULT_OK) {
             if (data == null) {
                 return;
             } Uri uri = data.getData();
-            System.out.println("CIAO");
-            System.out.println(uri.getPath()); }
+            System.out.println(uri.toString());
+            try {
+                File inputFile = FileUtil.from(HomeActivity.this, uri);
+                Log.d("file", "File...:::: uti - "+inputFile .getPath()+" file -" + inputFile + " : " + inputFile .exists());
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            }
     }
     }
