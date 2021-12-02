@@ -2,6 +2,7 @@ package LibraryServices;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Path;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.OpenableColumns;
@@ -15,6 +16,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.nio.file.Paths;
+import java.sql.SQLOutput;
 
 public class FileUtil {
     private static final int EOF = -1;
@@ -132,7 +135,8 @@ public class FileUtil {
 
     public static void writeToSDFile(File inputFile){
         File dir = new File (Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),"Alexandria");
-        dir.mkdirs();
+        if(!checkAlexandriaDir()){
+        dir.mkdirs();}
         File file = new File(dir, inputFile.getName());
         try {
             FileInputStream i = new FileInputStream(inputFile);
@@ -148,5 +152,18 @@ public class FileUtil {
             e.printStackTrace();
         }
         System.out.println("\n\nFile written to "+file);
+    }
+
+    public static boolean checkAlexandriaDir(){
+        File testdir = new File (Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS) + "/Alexandria","test");
+        testdir.mkdir();
+        if(testdir.isDirectory()){
+            testdir.delete();
+            System.out.println("LA CARTELLA ERA GIA' PRESENTE E NON E' STATA CREATA");
+            return true;
+        }else{
+            System.out.println("LA CARTELLA NON ERA PRESENTE ED SARA' CREATA");
+            return false;
+        }
     }
 }
