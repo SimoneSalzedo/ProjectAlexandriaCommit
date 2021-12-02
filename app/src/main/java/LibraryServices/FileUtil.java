@@ -3,15 +3,18 @@ package LibraryServices;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Environment;
 import android.provider.OpenableColumns;
 import android.util.Log;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 
 public class FileUtil {
     private static final int EOF = -1;
@@ -57,7 +60,7 @@ public class FileUtil {
         return new String[]{name, extension};
     }
 
-    private static String getFileName(Context context, Uri uri) {
+    protected static String getFileName(Context context, Uri uri) {
         String result = null;
         if (uri.getScheme().equals("content")) {
             Cursor cursor = context.getContentResolver().query(uri, null, null, null, null);
@@ -105,5 +108,45 @@ public class FileUtil {
             count += n;
         }
         return count;
+    }
+
+    private void checkExternalMedia(){
+        boolean mExternalStorageAvailable = false;
+        boolean mExternalStorageWriteable = false;
+        String state = Environment.getExternalStorageState();
+
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            // Can read and write the media
+            mExternalStorageAvailable = mExternalStorageWriteable = true;
+        } else if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
+            // Can only read the media
+            mExternalStorageAvailable = true;
+            mExternalStorageWriteable = false;
+        } else {
+            // Can't read or write
+            mExternalStorageAvailable = mExternalStorageWriteable = false;
+        }
+        System.out.println("\n\nExternal Media: readable="
+                +mExternalStorageAvailable+" writable="+mExternalStorageWriteable);
+    }
+
+    public static void writeToSDFile(File inputFile){
+        File dir = new File (Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),"Alexandria");
+        dir.mkdirs();
+        File file = new File(dir, inputFile.getName());
+        try {
+            FileInputStream i = new FileInputStream(inputFile);
+            FileOutputStream f = new FileOutputStream(file);
+            copy(i,f);
+            f.close();
+            i.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.out.println("******* File not found. Did you" +
+                    " add a WRITE_EXTERNAL_STORAGE permission to the   manifest?");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("\n\nFile written to "+file);
     }
 }

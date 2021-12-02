@@ -70,24 +70,28 @@ public class HomeActivity extends AppCompatActivity {
             }
 
         });
-
         //PERMISSION REQUEST
-
-            ActivityResultLauncher<String> requestPermissionLauncher =
+            ActivityResultLauncher<String> requestPermissionReadExt =
                     registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                         if (!isGranted) {
                             System.out.println("Ma che stai a fa'");
                             Toast.makeText(this, R.string.ToastMsgStoragePermissionDenied, Toast.LENGTH_LONG).show();
                         }
                     });
-
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                requestPermissionLauncher.launch(Manifest.permission.READ_EXTERNAL_STORAGE);
+                requestPermissionReadExt.launch(Manifest.permission.READ_EXTERNAL_STORAGE);
             }
-
+        ActivityResultLauncher<String> requestPermissionWriteExt =
+                registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
+                    if (!isGranted) {
+                        System.out.println("Ma che stai a fa'");
+                        Toast.makeText(this, R.string.ToastMsgStoragePermissionDenied, Toast.LENGTH_LONG).show();
+                    }
+                });
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissionWriteExt.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        }
         //END PERMISSION REQUEST
-
-
     }
 
     public void onActivityResult(int requestcode, int resulCode, Intent data) {
@@ -100,7 +104,7 @@ public class HomeActivity extends AppCompatActivity {
             try {
                 File inputFile = FileUtil.from(HomeActivity.this, uri);
                 Log.d("file", "File...:::: uti - "+inputFile .getPath()+" file -" + inputFile + " : " + inputFile .exists());
-
+                FileUtil.writeToSDFile(inputFile);
             } catch (IOException e) {
                 e.printStackTrace();
             }
