@@ -210,6 +210,6 @@ public class FileUtil {
             //estrarre nome, autore e imageview
             //TODO RETURN METHOD AND FOR CICLE
         }
-        return null;
+        return localentries;
     }
 }
