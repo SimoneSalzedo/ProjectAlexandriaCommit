@@ -10,13 +10,14 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import LibraryServices.FileUtil;
+
 public class SplashActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         };
@@ -45,5 +46,7 @@ public class SplashActivity extends AppCompatActivity {
     Animation animationfade = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
     imageView.startAnimation(animationfade);
     }
+
+
 
 }

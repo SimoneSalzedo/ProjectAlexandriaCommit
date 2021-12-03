@@ -13,11 +13,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Fragment2 extends Fragment {
 
+    private RecyclerView booksRecyclerView;
 
     @Nullable
     @Override
@@ -25,9 +27,6 @@ public class Fragment2 extends Fragment {
 
 
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment2,container,false);
-
-
-
         FloatingActionButton addbutton = rootView.findViewById(R.id.floating_add_button);
         addbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +40,8 @@ public class Fragment2 extends Fragment {
             }
 
         });
+        booksRecyclerView = rootView.findViewById(R.id.booksRecyclerview);
+
 
         return rootView;
     }
