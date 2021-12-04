@@ -8,6 +8,8 @@ import android.os.Environment;
 import android.provider.OpenableColumns;
 import android.util.Log;
 
+import com.example.projectalexandria.ListItemAdapter;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -16,8 +18,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.lang.reflect.Array;
 import java.nio.file.Paths;
 import java.sql.SQLOutput;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.List;
+
 
 public class FileUtil {
     private static final int EOF = -1;
@@ -165,5 +175,41 @@ public class FileUtil {
             System.out.println("LA CARTELLA NON ERA PRESENTE ED SARA' CREATA");
             return false;
         }
+    }
+
+    //METODI DA ESEGUIRE IN MULTITHREAD SU SPLASH
+    public static List<File> listLocalFilesAndDirsAllLevels(File baseDir) {
+
+        List<File>  collectedFilesAndDirs   = new ArrayList<>();
+        Deque<File> remainingDirs           = new ArrayDeque<>();
+
+        if(baseDir.exists()) {
+            remainingDirs.add(baseDir);
+
+            while(!remainingDirs.isEmpty()) {
+                File dir = remainingDirs.removeLast();
+                List<File> filesInDir = Arrays.asList(dir.listFiles());
+                for(File fileOrDir : filesInDir)  {
+                    collectedFilesAndDirs.add(fileOrDir);
+                    if(fileOrDir.isDirectory()) {
+                        remainingDirs.add(fileOrDir);
+                    }
+                }
+            }
+        }
+
+        return collectedFilesAndDirs;
+    }
+
+    public static ArrayList<ShelfEntry> instantiateEntriesArray(){
+        List<File> list= listLocalFilesAndDirsAllLevels(new File (Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),"Alexandria"));
+        System.out.println("Gli elementi nella cartella Alexandria sono: " + list.size());
+        ArrayList<ShelfEntry> localentries= new ArrayList<>();
+        for (File item : list)
+        {
+            //estrarre nome, autore e imageview
+            //TODO RETURN METHOD AND FOR CICLE
+        }
+        return localentries;
     }
 }
