@@ -9,7 +9,6 @@ import android.widget.CursorAdapter;
 import android.widget.TextView;
 
 import com.example.projectalexandria.R;
-import com.example.projectalexandria.data.database.ShelfEntry;
 
 
 public class ShelfEntryAdapter extends CursorAdapter {
@@ -25,8 +24,8 @@ public class ShelfEntryAdapter extends CursorAdapter {
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
         // Find fields to populate in inflated template
-        TextView tvBody = (TextView) view.findViewById(R.id.tvBody);
-        TextView tvPriority = (TextView) view.findViewById(R.id.tvPriority);
+        TextView tvBody = view.findViewById(R.id.tvBody);
+        TextView tvPriority = view.findViewById(R.id.tvPriority);
         // Extract properties from cursor
         String body = cursor.getString(cursor.getColumnIndexOrThrow("body"));
         int priority = cursor.getInt(cursor.getColumnIndexOrThrow("priority"));

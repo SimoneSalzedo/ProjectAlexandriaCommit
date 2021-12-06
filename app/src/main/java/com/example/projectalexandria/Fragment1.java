@@ -11,13 +11,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class Fragment1 extends Fragment {
-
-    // ListView lvItems = (ListView) findViewById(R.id.lvItems);
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment1,container,false);
-                return rootView;
+
+        return rootView;
     }
 }

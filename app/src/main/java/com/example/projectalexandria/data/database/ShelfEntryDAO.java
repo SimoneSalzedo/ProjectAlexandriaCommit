@@ -36,10 +36,10 @@ public interface ShelfEntryDAO {
     /*
      * Add support for specific queries with SQLite syntax
      * Remember that you have to override the DAO init if
-     * you want to implement PRAGMAS.
+     * you want to implement PRAGMA.
      * NOTE! ":variable" refers to the variable taken as input by the decorated function
      *       while "variable" refers to the name of the column of the implemented table
-     *       and "tablename" refers to the name of the table itself
+     *       and "table name" refers to the name of the table itself
      */
     @Query("SELECT * FROM shelfentry")
     Cursor getAll();
