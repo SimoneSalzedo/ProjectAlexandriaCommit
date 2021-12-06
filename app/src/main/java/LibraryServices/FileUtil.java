@@ -143,17 +143,26 @@ public class FileUtil {
                 +mExternalStorageAvailable+" writable="+mExternalStorageWriteable);
     }
 
-    public static void writeToSDFile(File inputFile){
+    public static void writeToSDFile(Context context,File inputFile){
         File dir = new File (Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),"Alexandria");
         if(!checkAlexandriaDir()){
         dir.mkdirs();}
         File file = new File(dir, inputFile.getName());
+        ShelfEntry entry = new ShelfEntry(inputFile.getName());
         try {
+
+            //COPIA IL FILE, DALLA CARTELLA SCELTA DELL'UTENTE NELLA CARTELLA ALEXANDRIA
+
             FileInputStream i = new FileInputStream(inputFile);
             FileOutputStream f = new FileOutputStream(file);
             copy(i,f);
             f.close();
             i.close();
+            //CREARE LA CARTELLA INTERNAMENTE ALLO STORAGE DELL'APP e PASSARCI I PARAMETRI E LA FOTO DENTRO
+            //System.out.println(context.getFilesDir());
+            entry.setup();
+            //altri metodi per costruire i file di testo e la directory e l'immagine
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             System.out.println("******* File not found. Did you" +
@@ -207,6 +216,7 @@ public class FileUtil {
         ArrayList<ShelfEntry> localentries= new ArrayList<>();
         for (File item : list)
         {
+
             //estrarre nome, autore e imageview
             //TODO RETURN METHOD AND FOR CICLE
         }

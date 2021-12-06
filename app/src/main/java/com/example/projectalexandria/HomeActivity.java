@@ -104,7 +104,7 @@ public class HomeActivity extends AppCompatActivity {
             try {
                 File inputFile = FileUtil.from(HomeActivity.this, uri);
                 Log.d("file", "File...:::: uti - "+inputFile .getPath()+" file -" + inputFile + " : " + inputFile .exists());
-                FileUtil.writeToSDFile(inputFile);
+                FileUtil.writeToSDFile( HomeActivity.this, inputFile);
             } catch (IOException e) {
                 e.printStackTrace();
             }
