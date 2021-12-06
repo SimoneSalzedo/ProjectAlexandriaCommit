@@ -26,6 +26,7 @@ public class Fragment2 extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
 
+
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment2,container,false);
         FloatingActionButton addbutton = rootView.findViewById(R.id.floating_add_button);
         addbutton.setOnClickListener(new View.OnClickListener() {
