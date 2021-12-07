@@ -1,6 +1,18 @@
 package com.example.projectalexandria.data.database;
 
+// Async non è necessario
+// LiveData è intrinsecamente
+// multithreaddato. Ma sarà
+// deprecato entro la prossima
+// estate.
+// Quindi per ora possiamo interfacciarci
+// direttamente con ShelfDAO.
+
+/*
+
 import android.app.Application;
+import android.app.AsyncNotedAppOp;
+import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
@@ -19,16 +31,17 @@ public class ShelfRepository {
     }
 
 
-    public void insert(ShelfEntry entry) {
 
+    public void insert(ShelfEntry entry) {
+        new InsertEntry(shelfDAO).execute(entry);
     }
 
     public void update(ShelfEntry entry) {
-
+        new UpdateEntry(shelfDAO).execute(entry);
     }
 
     public void delete(ShelfEntry entry) {
-
+        new DeleteEntry(shelfDAO).execute(entry);
     }
 
     public LiveData<List<ShelfEntry>> getAll() {
@@ -65,4 +78,47 @@ public class ShelfRepository {
 
 
 
+    private static class InsertEntry extends AsyncTask<ShelfEntry, Void, Void>{
+        private ShelfDAO shelfDAO;
+
+        private InsertEntry(ShelfDAO shelfDAO) {
+            this.shelfDAO = shelfDAO;
+        }
+
+        @Override
+        protected Void doInBackground(ShelfEntry ... entries) {
+            shelfDAO.insertEntry(entries[0]);
+            return null;
+        }
+    }
+
+    private static class UpdateEntry extends AsyncTask<ShelfEntry, Void, Void>{
+        private ShelfDAO shelfDAO;
+
+        private UpdateEntry(ShelfDAO shelfDAO) {
+            this.shelfDAO = shelfDAO;
+        }
+
+        @Override
+        protected Void doInBackground(ShelfEntry ... entries) {
+            shelfDAO.updateEntry(entries[0]);
+            return null;
+        }
+    }
+
+    private static class DeleteEntry extends AsyncTask<ShelfEntry, Void, Void>{
+        private ShelfDAO shelfDAO;
+
+        private DeleteEntry(ShelfDAO shelfDAO) {
+            this.shelfDAO = shelfDAO;
+        }
+
+        @Override
+        protected Void doInBackground(ShelfEntry ... entries) {
+            shelfDAO.deleteEntry(entries[0]);
+            return null;
+        }
+    }
+
 }
+*/
