@@ -1,31 +1,27 @@
-package com.example.projectalexandria;
+package com.example.projectalexandria.ui;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.Manifest;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.projectalexandria.R;
+import com.example.projectalexandria.ui.fragments.Fragment1;
+import com.example.projectalexandria.ui.fragments.Fragment2;
+import com.example.projectalexandria.ui.fragments.Fragment3;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarMenuView;
-import com.google.android.material.navigation.NavigationBarView;
 
 import java.io.File;
 import java.io.IOException;

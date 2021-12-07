@@ -1,4 +1,4 @@
-package com.example.projectalexandria;
+package com.example.projectalexandria.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,7 +10,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-import LibraryServices.FileUtil;
+import com.example.projectalexandria.R;
 
 public class SplashActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.projectalexandria.common.adapters;
+package com.example.projectalexandria.ui.adapters;
 
 import android.content.Context;
 import android.database.Cursor;

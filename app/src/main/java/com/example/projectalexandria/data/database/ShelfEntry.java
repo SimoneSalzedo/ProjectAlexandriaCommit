@@ -41,15 +41,15 @@ public class ShelfEntry {
      * while the files can be everywhere in the external storage of the device.
      */
     @ColumnInfo
-    public File cover;
+    public String cover;
 
     @ColumnInfo
-    public File file;
+    public String file;
 
     @ColumnInfo
     public DataTypes datatype;
 
-    public ShelfEntry(String title, String author, String genre, File cover) {
+    public ShelfEntry(String title, String author, String genre, String cover, String file) {
         this.title = title;
         this.author = author;
         this.genre = genre;
@@ -80,19 +80,19 @@ public class ShelfEntry {
         this.genre = genre;
     }
 
-    public File getCover() {
+    public String getCover() {
         return cover;
     }
 
-    public void setCover(File cover) {
+    public void setCover(String cover) {
         this.cover = cover;
     }
 
-    public File getFile() {
+    public String getFile() {
         return file;
     }
 
-    public void setFile(File file) {
+    public void setFile(String file) {
         this.file = file;
     }
 }

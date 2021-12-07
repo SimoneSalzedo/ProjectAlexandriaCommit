@@ -1,4 +1,4 @@
-package com.example.projectalexandria;
+package com.example.projectalexandria.ui.fragments;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.projectalexandria.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Fragment2 extends Fragment {

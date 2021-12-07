@@ -19,7 +19,7 @@ public abstract class ShelfDatabase extends RoomDatabase {
     /*
      * DAO Initialization
      */
-    public abstract ShelfEntryDAO shelfEntryDao();
+    public abstract ShelfDAO shelfDao();
 
     /*
      * Always results in one and only one instance of ShelfDatabase

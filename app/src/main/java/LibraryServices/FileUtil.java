@@ -2,13 +2,10 @@ package LibraryServices;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.graphics.Path;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.OpenableColumns;
 import android.util.Log;
-
-import com.example.projectalexandria.ListItemAdapter;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -17,15 +14,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.PrintWriter;
-import java.lang.reflect.Array;
-import java.nio.file.Paths;
-import java.sql.SQLOutput;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Deque;
-import java.util.LinkedList;
 import java.util.List;
 
 
