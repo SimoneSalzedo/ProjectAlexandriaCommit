@@ -31,7 +31,6 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         //PERMISSION REQUEST
-
         ActivityResultLauncher<String> requestPermissionReadExt =
                 registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                     if (!isGranted) {
@@ -51,9 +50,9 @@ public class HomeActivity extends AppCompatActivity {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             requestPermissionWriteExt.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE);
         }
-
         //END PERMISSION REQUEST
+
     }
 
 
-    }
+}
