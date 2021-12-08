@@ -11,12 +11,15 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.projectalexandria.R;
+import com.example.projectalexandria.ui.viemodel.ShelfViewModel;
 
 public class Fragment1 extends Fragment {
+    ShelfViewModel shelfViewModel;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment1,container,false);
+
 
         return rootView;
     }

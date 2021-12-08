@@ -8,7 +8,7 @@ package com.example.projectalexandria.data.database;
 // Quindi per ora possiamo interfacciarci
 // direttamente con ShelfDAO.
 
-/*
+
 
 import android.app.Application;
 import android.app.AsyncNotedAppOp;
@@ -121,4 +121,3 @@ public class ShelfRepository {
     }
 
 }
-*/
