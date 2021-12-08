@@ -15,9 +15,13 @@
         android:theme="@style/Theme.ProjectAlexandria">
         <activity
             android:name=".ui.HomeActivity"
+            android:label="HomeActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ui.SplashActivity"
+            android:label="SpashActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
