@@ -13,10 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.projectalexandria.R;
+import com.example.projectalexandria.ui.viewmodel.ShelfViewModel;
 
 public class FavoritesFragment extends Fragment {
 
-    private FavoritesViewModel mViewModel;
+    private ShelfViewModel shelfVM;
 
     public static FavoritesFragment newInstance() {
         return new FavoritesFragment();
@@ -31,7 +32,7 @@ public class FavoritesFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(FavoritesViewModel.class);
+         shelfVM = new ViewModelProvider(this).get(ShelfViewModel.class);
         // TODO: Use the ViewModel
     }
 

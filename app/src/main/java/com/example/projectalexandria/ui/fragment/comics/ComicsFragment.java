@@ -17,7 +17,7 @@ import com.example.projectalexandria.ui.viewmodel.ShelfViewModel;
 
 public class ComicsFragment extends Fragment {
 
-    private ShelfViewModel mViewModel;
+    private ShelfViewModel shelfVM;
 
     public static ComicsFragment newInstance() {
         return new ComicsFragment();
@@ -32,7 +32,7 @@ public class ComicsFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(ShelfViewModel.class);
+        shelfVM = new ViewModelProvider(this).get(ShelfViewModel.class);
         // TODO: Use the ViewModel
     }
 

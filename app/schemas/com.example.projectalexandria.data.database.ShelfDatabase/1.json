@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "13d10fd4b75bc498b29b4c0674f8ab7f",
+    "identityHash": "a5d5b1794ff8a7dc91c4517114d9e976",
     "entities": [
       {
         "tableName": "ShelfEntry",
@@ -89,6 +89,14 @@
               "genre"
             ],
             "createSql": "CREATE INDEX IF NOT EXISTS `index_ShelfEntry_genre` ON `${TABLE_NAME}` (`genre`)"
+          },
+          {
+            "name": "index_ShelfEntry_datatype",
+            "unique": false,
+            "columnNames": [
+              "datatype"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_ShelfEntry_datatype` ON `${TABLE_NAME}` (`datatype`)"
           }
         ],
         "foreignKeys": []
@@ -97,7 +105,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '13d10fd4b75bc498b29b4c0674f8ab7f')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a5d5b1794ff8a7dc91c4517114d9e976')"
     ]
   }
 }

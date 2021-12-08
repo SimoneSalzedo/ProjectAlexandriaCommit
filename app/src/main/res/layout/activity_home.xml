@@ -10,12 +10,15 @@
     <FrameLayout
         android:id="@+id/hostFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNavigation"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="64dp"
         android:layout_alignParentBottom="true"
         app:menu="@menu/navbar_menu">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
