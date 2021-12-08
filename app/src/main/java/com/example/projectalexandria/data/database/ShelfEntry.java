@@ -46,7 +46,7 @@ public class ShelfEntry {
     @ColumnInfo
     public String file;
 
-    @ColumnInfo
+    @ColumnInfo(index = true)
     public DataTypes datatype;
 
     public ShelfEntry(String title, String author, String genre, String cover, String file) {

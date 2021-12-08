@@ -7,8 +7,6 @@ package com.example.projectalexandria.data.database;
 
 import static androidx.room.OnConflictStrategy.REPLACE;
 
-import android.database.Cursor;
-
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;

@@ -11,7 +11,6 @@ package com.example.projectalexandria.data.database;
 
 
 import android.app.Application;
-import android.app.AsyncNotedAppOp;
 import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
@@ -48,32 +47,32 @@ public class ShelfRepository {
         return allEntries;
     }
 
-    public LiveData<List<ShelfEntry>> getByDataType() {
-        return allEntries;
+    public LiveData<List<ShelfEntry>> getByDataType(DataTypes dataType) {
+        return shelfDAO.getByDataType(dataType);
     }
 
-    public LiveData<List<ShelfEntry>> getByTitle() {
-        return allEntries;
+    public LiveData<List<ShelfEntry>> getByTitle(String title) {
+        return shelfDAO.getByTitle(title);
     }
 
-    public LiveData<List<ShelfEntry>> getByAuthor() {
-        return allEntries;
+    public LiveData<List<ShelfEntry>> getByAuthor(String author) {
+        return shelfDAO.getByAuthor(author);
     }
 
-    public LiveData<List<ShelfEntry>> getByGenre() {
-        return allEntries;
+    public LiveData<List<ShelfEntry>> getByGenre(String genre) {
+        return shelfDAO.getByGenre(genre);
     }
 
-    public LiveData<List<ShelfEntry>> searchByTitle() {
-        return allEntries;
+    public LiveData<List<ShelfEntry>> searchByTitle(String title) {
+        return shelfDAO.searchByTitle(title);
     }
 
-    public LiveData<List<ShelfEntry>> searchByAuthor() {
-        return allEntries;
+    public LiveData<List<ShelfEntry>> searchByAuthor(String author) {
+        return shelfDAO.searchByAuthor(author);
     }
 
-    public LiveData<List<ShelfEntry>> searchByGenre() {
-        return allEntries;
+    public LiveData<List<ShelfEntry>> searchByGenre(String genre) {
+        return shelfDAO.searchByGenre(genre);
     }
 
 

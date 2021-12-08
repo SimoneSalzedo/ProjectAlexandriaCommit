@@ -13,10 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.projectalexandria.R;
+import com.example.projectalexandria.ui.viewmodel.ShelfViewModel;
 
 public class BooksFragment extends Fragment {
 
-    private BooksViewModel mViewModel;
+    private ShelfViewModel mViewModel;
 
     public static BooksFragment newInstance() {
         return new BooksFragment();
@@ -31,7 +32,7 @@ public class BooksFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(BooksViewModel.class);
+        mViewModel = new ViewModelProvider(this).get(ShelfViewModel.class);
         // TODO: Use the ViewModel
     }
 

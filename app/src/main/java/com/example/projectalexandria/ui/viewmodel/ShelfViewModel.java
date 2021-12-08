@@ -1,11 +1,10 @@
-package com.example.projectalexandria.ui.viemodel;
+package com.example.projectalexandria.ui.viewmodel;
 
 import android.app.Application;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.example.projectalexandria.data.database.ShelfDAO;
 import com.example.projectalexandria.data.database.ShelfEntry;
 import com.example.projectalexandria.data.database.ShelfRepository;
 
