@@ -42,10 +42,9 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     public void fade(){
-    ImageView imageView = findViewById(R.id.farologo);
-    Animation animationfade = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
-    imageView.startAnimation(animationfade);
-    //Committ
+        ImageView imageView = findViewById(R.id.farologo);
+        Animation animationfade = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
+        imageView.startAnimation(animationfade);
     }
 
 
